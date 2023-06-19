@@ -13,6 +13,12 @@
 		4411467A2A3C387100D590C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 441146782A3C387100D590C5 /* Main.storyboard */; };
 		4411467C2A3C387300D590C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4411467B2A3C387300D590C5 /* Assets.xcassets */; };
 		4411467F2A3C387300D590C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4411467D2A3C387300D590C5 /* LaunchScreen.storyboard */; };
+		4411468A2A3C3A7E00D590C5 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 441146892A3C3A7E00D590C5 /* SQLite */; };
+		4411468C2A3C3A9200D590C5 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411468B2A3C3A9200D590C5 /* Department.swift */; };
+		4411468E2A3C3AB500D590C5 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411468D2A3C3AB500D590C5 /* DBHelper.swift */; };
+		441146902A3C3C4200D590C5 /* EmployeesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411468F2A3C3C4200D590C5 /* EmployeesListController.swift */; };
+		4411469D2A3C999300D590C5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411469B2A3C999300D590C5 /* TableViewCell.swift */; };
+		4411469E2A3C999300D590C5 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4411469C2A3C999300D590C5 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,11 @@
 		4411467B2A3C387300D590C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4411467E2A3C387300D590C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		441146802A3C387300D590C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4411468B2A3C3A9200D590C5 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		4411468D2A3C3AB500D590C5 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		4411468F2A3C3C4200D590C5 /* EmployeesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListController.swift; sourceTree = "<group>"; };
+		4411469B2A3C999300D590C5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4411469C2A3C999300D590C5 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4411468A2A3C3A7E00D590C5 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,10 +71,15 @@
 				441146722A3C387100D590C5 /* AppDelegate.swift */,
 				441146742A3C387100D590C5 /* SceneDelegate.swift */,
 				441146762A3C387100D590C5 /* ViewController.swift */,
+				4411468B2A3C3A9200D590C5 /* Department.swift */,
+				4411468F2A3C3C4200D590C5 /* EmployeesListController.swift */,
 				441146782A3C387100D590C5 /* Main.storyboard */,
+				4411468D2A3C3AB500D590C5 /* DBHelper.swift */,
 				4411467B2A3C387300D590C5 /* Assets.xcassets */,
 				4411467D2A3C387300D590C5 /* LaunchScreen.storyboard */,
 				441146802A3C387300D590C5 /* Info.plist */,
+				4411469B2A3C999300D590C5 /* TableViewCell.swift */,
+				4411469C2A3C999300D590C5 /* TableViewCell.xib */,
 			);
 			path = swift;
 			sourceTree = "<group>";
@@ -83,6 +100,9 @@
 			dependencies = (
 			);
 			name = swift;
+			packageProductDependencies = (
+				441146892A3C3A7E00D590C5 /* SQLite */,
+			);
 			productName = swift;
 			productReference = 4411466F2A3C387100D590C5 /* swift.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 441146662A3C387100D590C5;
+			packageReferences = (
+				441146882A3C3A7E00D590C5 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 441146702A3C387100D590C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4411467F2A3C387300D590C5 /* LaunchScreen.storyboard in Resources */,
+				4411469E2A3C999300D590C5 /* TableViewCell.xib in Resources */,
 				4411467C2A3C387300D590C5 /* Assets.xcassets in Resources */,
 				4411467A2A3C387100D590C5 /* Main.storyboard in Resources */,
 			);
@@ -139,8 +163,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				441146772A3C387100D590C5 /* ViewController.swift in Sources */,
+				4411468E2A3C3AB500D590C5 /* DBHelper.swift in Sources */,
 				441146732A3C387100D590C5 /* AppDelegate.swift in Sources */,
+				4411468C2A3C3A9200D590C5 /* Department.swift in Sources */,
 				441146752A3C387100D590C5 /* SceneDelegate.swift in Sources */,
+				4411469D2A3C999300D590C5 /* TableViewCell.swift in Sources */,
+				441146902A3C3C4200D590C5 /* EmployeesListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		441146882A3C3A7E00D590C5 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		441146892A3C3A7E00D590C5 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441146882A3C3A7E00D590C5 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 441146672A3C387100D590C5 /* Project object */;
 }
