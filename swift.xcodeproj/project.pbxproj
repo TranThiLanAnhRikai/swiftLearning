@@ -19,6 +19,7 @@
 		441146902A3C3C4200D590C5 /* EmployeesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411468F2A3C3C4200D590C5 /* EmployeesListController.swift */; };
 		4411469D2A3C999300D590C5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411469B2A3C999300D590C5 /* TableViewCell.swift */; };
 		4411469E2A3C999300D590C5 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4411469C2A3C999300D590C5 /* TableViewCell.xib */; };
+		445520192A3FEE0F00462081 /* EmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445520182A3FEE0F00462081 /* EmployeeDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4411468F2A3C3C4200D590C5 /* EmployeesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListController.swift; sourceTree = "<group>"; };
 		4411469B2A3C999300D590C5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4411469C2A3C999300D590C5 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		445520182A3FEE0F00462081 /* EmployeeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				441146762A3C387100D590C5 /* ViewController.swift */,
 				4411468B2A3C3A9200D590C5 /* Department.swift */,
 				4411468F2A3C3C4200D590C5 /* EmployeesListController.swift */,
+				445520182A3FEE0F00462081 /* EmployeeDetailsViewController.swift */,
 				441146782A3C387100D590C5 /* Main.storyboard */,
 				4411468D2A3C3AB500D590C5 /* DBHelper.swift */,
 				4411467B2A3C387300D590C5 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 				441146772A3C387100D590C5 /* ViewController.swift in Sources */,
 				4411468E2A3C3AB500D590C5 /* DBHelper.swift in Sources */,
 				441146732A3C387100D590C5 /* AppDelegate.swift in Sources */,
+				445520192A3FEE0F00462081 /* EmployeeDetailsViewController.swift in Sources */,
 				4411468C2A3C3A9200D590C5 /* Department.swift in Sources */,
 				441146752A3C387100D590C5 /* SceneDelegate.swift in Sources */,
 				4411469D2A3C999300D590C5 /* TableViewCell.swift in Sources */,
