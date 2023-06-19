@@ -10,13 +10,7 @@ import UIKit
 
 
 class EmployeesListController: UIViewController {
-    struct Employee {
-        let fullname: String
-        let birthday: String
-        let hometown: String
-        let department: String
-        
-    }
+
     
     let data: [Employee] = DBHelper.shared.getAllEmployees()
 
@@ -29,9 +23,9 @@ class EmployeesListController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
-    
-      // Do any additional setup after loading the view.
+
     }
+
 }
 
 extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {

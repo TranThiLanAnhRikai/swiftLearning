@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "46A6A8F4-CD99-4A4F-BF3B-A45DF644FF89"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "swift/EmployeesListController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "46A6A8F4-CD99-4A4F-BF3B-A45DF644FF89 - f4d1004ab20fe510"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "swift.EmployeesListController.viewDidLoad() -&gt; ()"
-                  moduleName = "swift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dminhi/Desktop/swift/swift/EmployeesListController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "856">
-               </Location>
-               <Location
-                  uuid = "46A6A8F4-CD99-4A4F-BF3B-A45DF644FF89 - f4d1004ab20fe552"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "swift.EmployeesListController.viewDidLoad() -&gt; ()"
-                  moduleName = "swift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dminhi/Desktop/swift/swift/EmployeesListController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "808">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "EF04E1EA-6DD0-42BC-BC92-5DE77B79D245"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,8 +14,8 @@
             filePath = "swift/EmployeesListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
