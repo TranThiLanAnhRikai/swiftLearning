@@ -1,22 +1,12 @@
-//
-//  EmployeesListController.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/16.
-//
-
 
 import UIKit
 
 
 class EmployeesListController: UIViewController {
 
-    
     let data: [Employee] = DBHelper.shared.getAllEmployees()
 
-
     @IBOutlet weak var tableView: UITableView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +17,7 @@ class EmployeesListController: UIViewController {
     }
 
 }
+
 
 extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
     

@@ -1,14 +1,5 @@
-//
-//  DBHelper.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/16.
-//
-
 
 import Foundation
-
-
 
 import SQLite
 
@@ -17,6 +8,7 @@ class DBHelper {
 
     private let db: Connection?
 
+    // Create database
     private init() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
         let databasePath = documentsPath.appendingPathComponent("employees.db")
@@ -28,7 +20,8 @@ class DBHelper {
             db = nil
         }
     }
-
+    
+    // Create table
     func createEmployeesTable() {
             if let db = db {
                 let employees = Table("employees")
@@ -54,6 +47,8 @@ class DBHelper {
                 print("Database connection is not available")
             }
         }
+    
+    // Register employee
     func registerEmployee(name: String, birthday: String, hometown: String, department: String) {
         if let db = db {
             let employees = Table("employees")
@@ -77,6 +72,7 @@ class DBHelper {
         }
     }
     
+    //Get all employees
     func getAllEmployees() -> [Employee] {
             var employees: [Employee] = []
             
@@ -109,6 +105,8 @@ class DBHelper {
 
             return employees
         }
+    
+    // Get all hometowns from database for dropdown at SearchView
     func getHometowns() -> [String] {
         var hometowns: Set<String> = []
 
@@ -133,6 +131,8 @@ class DBHelper {
 
         return Array(hometowns)
     }
+    
+    // Search employees
     func searchEmployees(fullname: String?, dateFrom: String, dateTo: String, hometown: String, department: String) -> [Employee] {
         var employees: [Employee] = []
         
@@ -179,7 +179,7 @@ class DBHelper {
         } catch {
             print("Failed to fetch employees: \(error)")
         }
-    
+
         return employees
     }
 

@@ -1,9 +1,3 @@
-//
-//  TableViewCell.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/16.
-//
 
 import UIKit
 
@@ -23,7 +17,24 @@ class TableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+
     }
+    override func layoutSubviews() {
+           super.layoutSubviews()
+           
+           // Apply elevation effect
+           layer.masksToBounds = false
+           layer.shadowColor = UIColor.black.cgColor
+           layer.shadowOpacity = 0.5
+           layer.shadowOffset = CGSize(width: 0, height: 2)
+           layer.shadowRadius = 4
+           
+           // Apply border
+           layer.borderWidth = 1
+           layer.borderColor = UIColor.gray.cgColor
+           
+           // Apply border radius
+           layer.cornerRadius = 8
+       }
     
 }

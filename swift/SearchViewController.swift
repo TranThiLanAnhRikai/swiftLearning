@@ -1,9 +1,3 @@
-//
-//  SearchViewController.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/19.
-//
 
 import Foundation
 import UIKit
@@ -43,7 +37,7 @@ class SearchViewController: UIViewController {
 
     func searchEmployees() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd" // Customize the date format according to your needs
+        dateFormatter.dateFormat = "yyyy-MM-dd"
 
         let dateFromValue = dateFormatter.string(from: dateFrom.date)
         let dateToValue = dateFormatter.string(from: dateTo.date)

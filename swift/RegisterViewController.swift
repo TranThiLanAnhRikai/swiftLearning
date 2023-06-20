@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/16.
-//
-
 import UIKit
 
 class RegisterViewController: UIViewController{
@@ -12,23 +5,17 @@ class RegisterViewController: UIViewController{
     var selectedDepartment: Department?
     
     @IBOutlet weak var registerButton: UIButton!
-    
     @IBOutlet weak var seeAllButton: UIButton!
-    
     @IBOutlet weak var picker: UIPickerView!
-    
     @IBOutlet weak var hometown: UITextField!
     @IBOutlet weak var birthday: UIDatePicker!
     @IBOutlet weak var fullname: UITextField!
     
-    
     @IBAction func seeAllButtonPressed(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "goToList", sender: self)
 
     }
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         registerNewEmployee()
-
     }
     
 
@@ -38,9 +25,9 @@ class RegisterViewController: UIViewController{
         picker.delegate = self
         DBHelper.shared.createEmployeesTable()
         selectedDepartment = Department.allCases.first
-        // Do any additional setup after loading the view.
     }
-
+    
+    // Validate inout and Register new employee
     func registerNewEmployee() {
     guard let name = fullname.text, !name.isEmpty,
           let hometown = hometown.text, !hometown.isEmpty,
@@ -73,11 +60,13 @@ class RegisterViewController: UIViewController{
     
     successAlertController.addAction(okAction)
     present(successAlertController, animated: true, completion: nil)
-}
+    }
 
 
 }
-    extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+
+// Get data for Department picker 
+extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1
         }

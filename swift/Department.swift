@@ -1,10 +1,3 @@
-//
-//  Department.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/16.
-//
-
 import Foundation
 enum Department: String {
     case bdg = "BDG"
