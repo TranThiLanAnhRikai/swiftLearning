@@ -1,38 +1,23 @@
-//
-//  EmployeesListController.swift
-//  swift
-//
-//  Created by NGUYEN DUY MINH on 2023/06/16.
-//
-
 
 import UIKit
 
 
 class EmployeesListController: UIViewController {
-    struct Employee {
-        let fullname: String
-        let birthday: String
-        let hometown: String
-        let department: String
-        
-    }
-    
+
     let data: [Employee] = DBHelper.shared.getAllEmployees()
 
-
     @IBOutlet weak var tableView: UITableView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
-    
-      // Do any additional setup after loading the view.
+
     }
+
 }
+
 
 extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
     
