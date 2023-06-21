@@ -5,6 +5,7 @@ import UIKit
 
 class EmployeeDetailsViewController: UIViewController {
     var employee: Employee?
+    @IBOutlet weak var buttons: UIStackView!
     var selectedDepartment: Department?
     @IBOutlet weak var fullname: UITextField!
     @IBOutlet weak var deptPicker: UIPickerView!
@@ -105,6 +106,7 @@ class EmployeeDetailsViewController: UIViewController {
     //Edit Dept Button
     @IBOutlet weak var editDeptButton: UIButton!
     @IBAction func editDeptButtonPressed(_ sender: Any) {
+        buttons.isHidden = false
         editDeptButton.isHidden = true
         department.isHidden = true
         deptPicker.isHidden = false
@@ -113,6 +115,7 @@ class EmployeeDetailsViewController: UIViewController {
     //Edit Fullname Button
     @IBOutlet weak var editFnButton: UIButton!
     @IBAction func editFnButtonPressed(_ sender: Any) {
+        buttons.isHidden = false
         fullname.becomeFirstResponder()
         editFnButton.isHidden = true
         fullname.isUserInteractionEnabled = true
@@ -122,6 +125,7 @@ class EmployeeDetailsViewController: UIViewController {
     // Edit Birthday Button
     @IBOutlet weak var editBdButton: UIButton!
     @IBAction func editBdButtonPressed(_ sender: Any) {
+        buttons.isHidden = false
         birthday.isHidden = true
         picker.isHidden = false
         editBdButton.isHidden = true
@@ -130,6 +134,7 @@ class EmployeeDetailsViewController: UIViewController {
     // Edit Hometown Button
     @IBOutlet weak var editHTButton: UIButton!
     @IBAction func editHTButtonPressed(_ sender: Any) {
+        buttons.isHidden = false
         hometown.isUserInteractionEnabled = true
         hometown.becomeFirstResponder()
         editHTButton.isHidden = true

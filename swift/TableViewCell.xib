@@ -22,6 +22,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         </variation>
@@ -31,6 +34,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         </variation>
@@ -40,6 +46,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         </variation>
@@ -49,6 +58,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         </variation>
@@ -59,11 +71,21 @@
                     <constraint firstItem="E6R-st-zPB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="200" id="9uN-u9-AmA">
                         <variation key="heightClass=regular-widthClass=regular" constant="300"/>
                     </constraint>
-                    <constraint firstItem="Run-Mt-1Vu" firstAttribute="top" secondItem="E6R-st-zPB" secondAttribute="bottom" constant="28" id="IaH-sR-Pzi"/>
-                    <constraint firstAttribute="bottom" secondItem="EmW-sd-h8m" secondAttribute="bottom" constant="10" id="L0X-4s-ETI"/>
-                    <constraint firstAttribute="bottom" secondItem="Run-Mt-1Vu" secondAttribute="bottom" constant="10" id="PJQ-pB-Td1"/>
-                    <constraint firstItem="Grc-Cv-jUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UFQ-Tm-KKX"/>
-                    <constraint firstItem="EmW-sd-h8m" firstAttribute="top" secondItem="Grc-Cv-jUP" secondAttribute="bottom" constant="28" id="Uet-4R-Vsx"/>
+                    <constraint firstItem="Run-Mt-1Vu" firstAttribute="top" secondItem="E6R-st-zPB" secondAttribute="bottom" constant="28" id="IaH-sR-Pzi">
+                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                    </constraint>
+                    <constraint firstAttribute="bottom" secondItem="EmW-sd-h8m" secondAttribute="bottom" constant="10" id="L0X-4s-ETI">
+                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                    </constraint>
+                    <constraint firstAttribute="bottom" secondItem="Run-Mt-1Vu" secondAttribute="bottom" constant="10" id="PJQ-pB-Td1">
+                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                    </constraint>
+                    <constraint firstItem="Grc-Cv-jUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UFQ-Tm-KKX">
+                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                    </constraint>
+                    <constraint firstItem="EmW-sd-h8m" firstAttribute="top" secondItem="Grc-Cv-jUP" secondAttribute="bottom" constant="28" id="Uet-4R-Vsx">
+                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                    </constraint>
                     <constraint firstItem="Grc-Cv-jUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Xzy-Ww-zyL">
                         <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                     </constraint>
@@ -73,7 +95,9 @@
                     <constraint firstItem="EmW-sd-h8m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="iy6-DU-bBa">
                         <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                     </constraint>
-                    <constraint firstItem="E6R-st-zPB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rDH-j5-rQA"/>
+                    <constraint firstItem="E6R-st-zPB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rDH-j5-rQA">
+                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                    </constraint>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
