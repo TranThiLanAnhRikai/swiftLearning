@@ -4,7 +4,8 @@ import UIKit
 
 class EmployeesListController: UIViewController {
 
-    let data: [Employee] = DBHelper.shared.getAllEmployees()
+//    let data: [Employee] = DBHelper.shared.getAllEmployees()
+    var data: [Employee] = []
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -13,7 +14,19 @@ class EmployeesListController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
+        loadEmployees()
+        print(data)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Reload employees data when the view appears
+        loadEmployees()
+    }
 
+    func loadEmployees() {
+        data = DBHelper.shared.getAllEmployees()
+        tableView.reloadData()
     }
 
 }

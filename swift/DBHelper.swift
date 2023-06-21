@@ -78,18 +78,20 @@ class DBHelper {
             
             do {
                 let employeesTable = Table("employees")
+                let id = Expression<Int>("id")
                 let fullname = Expression<String>("name")
                 let birthday = Expression<String>("birthday")
                 let hometown = Expression<String>("hometown")
                 let department = Expression<String>("department")
                 
                 // Fetch all rows from the employees table
-                let query = employeesTable.select(fullname, birthday, hometown, department)
+                let query = employeesTable.select(id, fullname, birthday, hometown, department)
                 let rows = try db?.prepare(query)
                 
                 if let rows = rows {
                     for row in rows {
                         let employee = Employee(
+                            id: row[id],
                             fullname: row[fullname],
                             birthday: row[birthday],
                             hometown: row[hometown],
@@ -138,13 +140,14 @@ class DBHelper {
         
         do {
             let employeesTable = Table("employees")
+            let id = Expression<Int>("id")
             let fullnameColumn = Expression<String>("name")
             let birthdayColumn = Expression<String>("birthday")
             let hometownColumn = Expression<String>("hometown")
             let departmentColumn = Expression<String>("department")
             
             // Start with a base query to fetch all rows from the employees table
-            var query = employeesTable.select(fullnameColumn, birthdayColumn, hometownColumn, departmentColumn)
+            var query = employeesTable.select(id, fullnameColumn, birthdayColumn, hometownColumn, departmentColumn)
             
             // Check if fullname is provided and add it as a condition
             if let fullname = fullname, !fullname.isEmpty {
@@ -167,6 +170,7 @@ class DBHelper {
             if let rows = rows {
                 for row in rows {
                     let employee = Employee(
+                        id: row[id],
                         fullname: row[fullnameColumn],
                         birthday: row[birthdayColumn],
                         hometown: row[hometownColumn],
@@ -182,5 +186,53 @@ class DBHelper {
 
         return employees
     }
+    
+    // Update employee
+    // Update employee
+    func updateEmployee(id: Int, name: String, birthday: String, hometown: String, department: String) {
+        guard let db = db else {
+            print("Database connection is not available")
+            return
+        }
+        
+        let employees = Table("employees")
+        let idColumn = Expression<Int>("id")
+        let nameColumn = Expression<String>("name")
+        let birthdayColumn = Expression<String>("birthday")
+        let hometownColumn = Expression<String>("hometown")
+        let departmentColumn = Expression<String>("department")
+        
+        do {
+            let employee = employees.filter(idColumn == id)
+            let update = employee.update(nameColumn <- name,
+                                         birthdayColumn <- birthday,
+                                         hometownColumn <- hometown,
+                                         departmentColumn <- department)
+            if try db.run(update) > 0 {
+                print("Employee with ID \(id) updated successfully.")
+            } else {
+                print("Employee not found.")
+            }
+        } catch {
+            print("Error updating employee: \(error)")
+        }
+    }
+ // Delete employee
+    func deleteEmployee(id: Int) {
+            if let db = db {
+                let employees = Table("employees")
+                let idColumn = Expression<Int>("id")
+
+                do {
+                    let employee = employees.filter(idColumn == id)
+                    try db.run(employee.delete())
+                    print("Deleted employee with ID: \(id)")
+                } catch {
+                    print("Error deleting employee: \(error)")
+                }
+            } else {
+                print("Database connection is not available")
+            }
+        }
 
 }

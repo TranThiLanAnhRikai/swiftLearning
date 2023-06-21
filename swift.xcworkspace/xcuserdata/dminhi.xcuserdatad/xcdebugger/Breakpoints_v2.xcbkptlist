@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "02929DEE-616A-4B42-97C9-DFBB3115D78F"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "swift/EmployeeDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "EmployeeDetailsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - ca32fcbe54f12e3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift.EmployeeDetailsViewController.deleteButton.getter : Swift.Optional&lt;__C.UIBarButtonItem&gt;"
+                  moduleName = "swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dminhi/Desktop/swiftLearning/swift/EmployeeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - 6d33dbd23286d24e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift.EmployeeDetailsViewController.deleteButton.setter : Swift.Optional&lt;__C.UIBarButtonItem&gt;"
+                  moduleName = "swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dminhi/Desktop/swiftLearning/swift/EmployeeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - 63e604446bd7593d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift.EmployeeDetailsViewController.deleteButton.modify : Swift.Optional&lt;__C.UIBarButtonItem&gt;"
+                  moduleName = "swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dminhi/Desktop/swiftLearning/swift/EmployeeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - 19ffa7440eed7855"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift.EmployeeDetailsViewController.deleteButton.modify : Swift.Optional&lt;__C.UIBarButtonItem&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dminhi/Desktop/swiftLearning/swift/EmployeeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - 93a6a288b636a15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift.EmployeeDetailsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; swift.EmployeeDetailsViewController"
+                  moduleName = "swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dminhi/Desktop/swiftLearning/swift/EmployeeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - c7acda0ea9a948d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swift.EmployeeDetailsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;swift.EmployeeDetailsViewController&gt;"
+                  moduleName = "swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dminhi/Desktop/swiftLearning/swift/EmployeeDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
