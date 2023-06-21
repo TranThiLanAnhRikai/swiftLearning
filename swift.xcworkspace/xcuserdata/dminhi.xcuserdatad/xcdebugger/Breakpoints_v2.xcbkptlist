@@ -14,10 +14,10 @@
             filePath = "swift/EmployeeDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "9"
-            endingLineNumber = "9"
-            landmarkName = "EmployeeDetailsViewController"
-            landmarkType = "3">
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "deptPicker"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "5AC26DFE-68B3-4A7D-94BA-3E22E8D55253 - ca32fcbe54f12e3a"
