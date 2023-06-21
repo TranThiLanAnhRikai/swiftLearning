@@ -42,7 +42,7 @@ class RegisterViewController: UIViewController{
     }
 
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.dateFormat = "MM-dd-yyyy"
     let birthdayString = dateFormatter.string(from: birthday.date)
 
     DBHelper.shared.registerEmployee(name: name, birthday: birthdayString, hometown: hometown, department: selectedDepartment.rawValue)
