@@ -4,6 +4,7 @@ import UIKit
 
 
 class EmployeeDetailsViewController: UIViewController {
+    
     @IBOutlet weak var fullname: UILabel!
     @IBOutlet weak var department: UILabel!
     @IBOutlet weak var birthday: UILabel!

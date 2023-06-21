@@ -28,8 +28,9 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
-            htDropdown.optionArray = hometowns
-            deptDropdown.optionArray = Department.allCases.map { $0.rawValue }
+        htDropdown.optionArray = hometowns
+
+        deptDropdown.optionArray = Department.allCases.map { $0.rawValue }
           
         }
         
