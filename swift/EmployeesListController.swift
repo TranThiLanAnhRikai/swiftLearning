@@ -1,36 +1,123 @@
-
 import UIKit
+import iOSDropDown
 
+class EmployeesListController: UIViewController{
 
-class EmployeesListController: UIViewController {
-
-//    let data: [Employee] = DBHelper.shared.getAllEmployees()
     var data: [Employee] = []
 
+    
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-
+    
+    @IBOutlet weak var displayButton: UIButton!
+    var categoryList = ["Fullname", "Birthday"]
+    var orderList = ["Ascending", "Descending"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
         loadEmployees()
-        print(data)
+        
+        let fullnameAction = UIAction(title: "Fullname") { [weak self] _ in
+            self?.updateButtonTitle("Fullname")
+        }
+        
+        let birthdayAction = UIAction(title: "Birthday") { [weak self] _ in
+            self?.updateButtonTitle("Birthday")
+        }
+        
+        let categoryMenu = UIMenu(title: "", children: [fullnameAction, birthdayAction])
+        categoryButton.showsMenuAsPrimaryAction = true
+        categoryButton.menu = categoryMenu
+        
+        
+        let ascendingAction = UIAction(title: "Ascending") { [weak self] _ in
+            self?.updateOrderButtonTitle("Ascending")
+        }
+        
+        let descendingAction = UIAction(title: "Descending") { [weak self] _ in
+            self?.updateOrderButtonTitle("Descending")
+        }
+        
+        let orderMenu = UIMenu(title: "", children: [ascendingAction, descendingAction])
+        orderButton.showsMenuAsPrimaryAction = true
+        orderButton.menu = orderMenu
+
+
+    }
+    
+    @IBAction func displayButtonPressed(_ sender: Any) {
+        sortEmployees()
+    }
+    func updateButtonTitle(_ title: String) {
+        categoryButton.setTitle(title, for: .normal)
+    }
+    
+    func updateOrderButtonTitle(_ title: String) {
+        orderButton.setTitle(title, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Reload employees data when the view appears
         loadEmployees()
+        sortEmployees()
     }
-
+//
+    
     func loadEmployees() {
         data = DBHelper.shared.getAllEmployees()
         tableView.reloadData()
     }
-
+    
+    func sortEmployees() {
+        let category = categoryButton.title(for: .normal)
+        let order = orderButton.title(for: .normal)
+        
+        // Get the sorted employees list based on the selected category and order
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        
+        if category == "Fullname" {
+//            if order == "Ascending" {
+//                data = DBHelper.shared.getAllEmployees().sorted { $0.fullname < $1.fullname }
+//                print(data)
+//            } else {
+//                data = DBHelper.shared.getAllEmployees().sorted { $0.fullname > $1.fullname }
+//            }
+            if order == "Ascending" {
+                        data.sort { $0.fullname.localizedStandardCompare($1.fullname) == .orderedAscending }
+                    } else {
+                        data.sort { $0.fullname.localizedStandardCompare($1.fullname) == .orderedDescending }
+                    }
+        } else if category == "Birthday" {
+            if order == "Ascending" {
+                data = DBHelper.shared.getAllEmployees().sorted { employee1, employee2 in
+                    guard let date1 = dateFormatter.date(from: employee1.birthday),
+                          let date2 = dateFormatter.date(from: employee2.birthday) else {
+                        return false
+                    }
+                    return date1 < date2
+                }
+            } else {
+                data = DBHelper.shared.getAllEmployees().sorted { employee1, employee2 in
+                    guard let date1 = dateFormatter.date(from: employee1.birthday),
+                          let date2 = dateFormatter.date(from: employee2.birthday) else {
+                        return false
+                    }
+                    return date1 > date2
+                }
+            }
+            print(data)
+        }
+        
+        tableView.reloadData()
+    }
 }
-
 
 extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
     
@@ -41,6 +128,7 @@ extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
         vc.employee = employee
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -50,8 +138,11 @@ extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         cell.fullname.text = employee.fullname
         cell.department.text = employee.department
+        cell.tag = indexPath.row
         return cell
     }
     
     
+    
+   
 }
