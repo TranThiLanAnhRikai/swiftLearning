@@ -37,8 +37,10 @@ class SearchViewController: UIViewController {
         deptDropdown.optionArray = Department.allCases.map { $0.rawValue }
         htDropdown.text = htDropdown.optionArray.first
         htDropdown.arrowSize = 10
+        htDropdown.isUserInteractionEnabled = false
         deptDropdown.text = deptDropdown.optionArray.first
         deptDropdown.arrowSize = 10
+
         }
         
 
@@ -64,6 +66,12 @@ class SearchViewController: UIViewController {
             deptDropdown.text = deptDropdown.optionArray.first
         }
 
+    }
+}
+class DropdownTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        // Disable all text field actions
+        return false
     }
 }
 

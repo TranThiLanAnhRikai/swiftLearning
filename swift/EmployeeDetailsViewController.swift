@@ -4,6 +4,8 @@ import UIKit
 
 
 class EmployeeDetailsViewController: UIViewController {
+
+    
     var employee: Employee?
     @IBOutlet weak var buttons: UIStackView!
     var selectedDepartment: Department?
@@ -78,10 +80,11 @@ class EmployeeDetailsViewController: UIViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM-dd-yyyy"
             let updatedBirthday = dateFormatter.string(from: picker.date)
-        print(updatedBirthday)
+    
 
             // Call the updateEmployee function to update the employee
         DBHelper.shared.updateEmployee(id: employeeID, name: updatedName, birthday: updatedBirthday, hometown: updatedHometown, department: updatedDepartment)
+
             
             // Display the updated information
             fullname.text = updatedName
@@ -163,6 +166,7 @@ class EmployeeDetailsViewController: UIViewController {
         fullname.isUserInteractionEnabled = false
         department.isUserInteractionEnabled = false
         birthday.isUserInteractionEnabled = false
+        navigationItem.setHidesBackButton(true, animated: false)
     }
 }
 
