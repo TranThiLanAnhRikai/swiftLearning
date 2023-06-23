@@ -1,10 +1,12 @@
 import UIKit
 import iOSDropDown
 
-class EmployeesListController: UIViewController{
+class EmployeesListController: UIViewController, passData{
+
 
     var data: [Employee] = []
-
+    var selectedEmployee: Employee?
+//    var selectedRow: Int?
     
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var orderButton: UIButton!
@@ -64,8 +66,9 @@ class EmployeesListController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Reload employees data when the view appears
-        loadEmployees()
+//        loadEmployees()
         sortEmployees()
+    
     }
 //
     
@@ -117,6 +120,10 @@ class EmployeesListController: UIViewController{
         
         tableView.reloadData()
     }
+    func updateRow(updatedIndexPath: [IndexPath]) {
+        tableView.reloadRows(at: updatedIndexPath, with: .none)
+    }
+    
 }
 
 extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
@@ -126,7 +133,12 @@ extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
         let vc = storyboard.instantiateViewController(identifier: "employeeDetails") as! EmployeeDetailsViewController
         let employee = data[indexPath.row]
         vc.employee = employee
+        vc.selectedRow = indexPath.row
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+//        selectedEmployee = data[indexPath.row]
+//        selectedRow = indexPath
+//        performSegue(withIdentifier: "cell", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -138,9 +150,13 @@ extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         cell.fullname.text = employee.fullname
         cell.department.text = employee.department
-        cell.tag = indexPath.row
+//        selectedIndexPath = [indexPath]
+//        rowNumber = indexPath.row
         return cell
     }
+    
+
+
     
     
     

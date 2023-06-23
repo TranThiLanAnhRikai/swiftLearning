@@ -2,11 +2,15 @@
 import Foundation
 import UIKit
 
-
+protocol passData {
+    func updateRow(updatedIndexPath: [IndexPath])
+}
 class EmployeeDetailsViewController: UIViewController {
-
+  
     
     var employee: Employee?
+    var delegate: passData!
+    var selectedRow: Int?
     @IBOutlet weak var buttons: UIStackView!
     var selectedDepartment: Department?
     @IBOutlet weak var fullname: UITextField!
@@ -103,6 +107,15 @@ class EmployeeDetailsViewController: UIViewController {
             editHTButton.isHidden = false
             fullname.isUserInteractionEnabled = false
             editFnButton.isHidden = false
+        
+        //
+        let indexPath = IndexPath(item: selectedRow!, section: 0)
+        print(selectedRow!)
+        print(indexPath)
+        print(delegate)
+        delegate.updateRow(updatedIndexPath: [indexPath])
+            
+      
 
     }
 

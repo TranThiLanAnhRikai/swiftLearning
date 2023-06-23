@@ -275,6 +275,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="924" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="u8F-Ch-yWj" kind="show" identifier="cell" id="fD1-NW-ME8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
