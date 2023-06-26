@@ -2,12 +2,12 @@ import UIKit
 import iOSDropDown
 
 class EmployeesListController: UIViewController, passData{
-
-
+    
+    
     var data: [Employee] = []
     var selectedEmployee: Employee?
-//    var selectedRow: Int?
-    
+    //    var selectedRow: Int?
+    var selectedIndexPath: IndexPath?
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +18,6 @@ class EmployeesListController: UIViewController, passData{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
@@ -49,7 +48,8 @@ class EmployeesListController: UIViewController, passData{
         orderButton.showsMenuAsPrimaryAction = true
         orderButton.menu = orderMenu
 
-
+        
+        
     }
     
     @IBAction func displayButtonPressed(_ sender: Any) {
@@ -62,16 +62,7 @@ class EmployeesListController: UIViewController, passData{
     func updateOrderButtonTitle(_ title: String) {
         orderButton.setTitle(title, for: .normal)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Reload employees data when the view appears
-//        loadEmployees()
-        sortEmployees()
-    
-    }
-//
-    
+
     func loadEmployees() {
         data = DBHelper.shared.getAllEmployees()
         tableView.reloadData()
@@ -86,17 +77,11 @@ class EmployeesListController: UIViewController, passData{
         dateFormatter.dateFormat = "MM-dd-yyyy"
         
         if category == "Fullname" {
-//            if order == "Ascending" {
-//                data = DBHelper.shared.getAllEmployees().sorted { $0.fullname < $1.fullname }
-//                print(data)
-//            } else {
-//                data = DBHelper.shared.getAllEmployees().sorted { $0.fullname > $1.fullname }
-//            }
             if order == "Ascending" {
-                        data.sort { $0.fullname.localizedStandardCompare($1.fullname) == .orderedAscending }
-                    } else {
-                        data.sort { $0.fullname.localizedStandardCompare($1.fullname) == .orderedDescending }
-                    }
+                data.sort { $0.fullname.localizedStandardCompare($1.fullname) == .orderedAscending }
+            } else {
+                data.sort { $0.fullname.localizedStandardCompare($1.fullname) == .orderedDescending }
+            }
         } else if category == "Birthday" {
             if order == "Ascending" {
                 data = DBHelper.shared.getAllEmployees().sorted { employee1, employee2 in
@@ -115,50 +100,37 @@ class EmployeesListController: UIViewController, passData{
                     return date1 > date2
                 }
             }
-            print(data)
         }
         
         tableView.reloadData()
     }
-    func updateRow(updatedIndexPath: [IndexPath]) {
-        tableView.reloadRows(at: updatedIndexPath, with: .none)
+    func updateRows() {
+        loadEmployees() // Update the data array with the latest employees
     }
-    
 }
-
-extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "employeeDetails") as! EmployeeDetailsViewController
-        let employee = data[indexPath.row]
-        vc.employee = employee
-        vc.selectedRow = indexPath.row
-        vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
-//        selectedEmployee = data[indexPath.row]
-//        selectedRow = indexPath
-//        performSegue(withIdentifier: "cell", sender: self)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let employee = data[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-        cell.fullname.text = employee.fullname
-        cell.department.text = employee.department
-//        selectedIndexPath = [indexPath]
-//        rowNumber = indexPath.row
-        return cell
-    }
-    
-
-
-    
-    
-    
+    extension EmployeesListController: UITableViewDataSource, UITableViewDelegate {
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "employeeDetails") as! EmployeeDetailsViewController
+            let employee = data[indexPath.row]
+            vc.employee = employee
+            vc.selectedRow = indexPath.row
+            selectedIndexPath = indexPath
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return data.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let employee = data[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
+            cell.fullname.text = employee.fullname
+            cell.department.text = employee.department
+            return cell
+        }
    
 }

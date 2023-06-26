@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 protocol passData {
-    func updateRow(updatedIndexPath: [IndexPath])
+    func updateRows()
 }
 class EmployeeDetailsViewController: UIViewController {
   
@@ -44,9 +44,10 @@ class EmployeeDetailsViewController: UIViewController {
            func deleteEmployee() {
                // Perform deletion logic here
                DBHelper.shared.deleteEmployee(id: employee!.id)
-
-               // Go back to EmployeesListViewController
-               navigationController?.popViewController(animated: true)
+               // Notify the delegate about the deletion
+               delegate?.updateRows()
+                // Go back to EmployeesListViewController
+                navigationController?.popViewController(animated: true)
            }
     
     // Cancel Button
@@ -87,7 +88,7 @@ class EmployeeDetailsViewController: UIViewController {
     
 
             // Call the updateEmployee function to update the employee
-        DBHelper.shared.updateEmployee(id: employeeID, name: updatedName, birthday: updatedBirthday, hometown: updatedHometown, department: updatedDepartment)
+            DBHelper.shared.updateEmployee(id: employeeID, name: updatedName, birthday: updatedBirthday, hometown: updatedHometown, department: updatedDepartment)
 
             
             // Display the updated information
@@ -107,16 +108,9 @@ class EmployeeDetailsViewController: UIViewController {
             editHTButton.isHidden = false
             fullname.isUserInteractionEnabled = false
             editFnButton.isHidden = false
-        
-        //
-        let indexPath = IndexPath(item: selectedRow!, section: 0)
-        print(selectedRow!)
-        print(indexPath)
-        print(delegate)
-        delegate.updateRow(updatedIndexPath: [indexPath])
+        // Notify the delegate
+        delegate.updateRows()
             
-      
-
     }
 
     //Edit Dept Button
@@ -179,7 +173,6 @@ class EmployeeDetailsViewController: UIViewController {
         fullname.isUserInteractionEnabled = false
         department.isUserInteractionEnabled = false
         birthday.isUserInteractionEnabled = false
-        navigationItem.setHidesBackButton(true, animated: false)
     }
 }
 
